@@ -37,7 +37,7 @@ def decode_stim(data_path, file_stim):
             elif row[0]=="blinks":
                 #check that n_corrupt is 0
                 if not n_corrupt==0:
-                    print "!Error in parsing"
+                    print ("!Error in parsing")
             else:
                 blinks.append([float(row[0]), int(row[1])])
     blinks = np.array(blinks)
@@ -49,7 +49,7 @@ file_idx = 0
 list_of_files = [f for f in os.listdir(data_folder) if os.path.isfile(os.path.join(data_folder, f)) and '_data' in f]
 file_sig = list_of_files[file_idx]
 file_stim = list_of_files[file_idx].replace('_data','_labels')
-print "Reading: ", file_sig, file_stim
+print ("Reading: ", file_sig, file_stim)
 
 # Loading data
 if data_folder is 'EEG-IO' or data_folder is 'EEG-MB':
